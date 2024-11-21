@@ -10,6 +10,7 @@ const PersonInfo = ({ name, position, company, contact, email, location }) => {
         <li><strong>Email:</strong> {email}</li>
         <li><strong>Location:</strong> {location}</li>
       </ul>
+      <button>Поприветствовать</button>
     </div>
   );
 };
