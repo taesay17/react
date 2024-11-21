@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const PersonInfo = ({ name, position, company, contact, email, location }) => {
+const PersonInfo = ({ name, position, company, contact, email, location, profileLink }) => {
+  // Состояние для хранения текста сообщения
+  const [message, setMessage] = useState('');
+
+  // Функция для обработки нажатия на кнопку
+  const handleClick = () => {
+    setMessage(``);
+  };
+
   return (
     <div className="person-info">
       <h1>{name}</h1>
@@ -9,8 +17,12 @@ const PersonInfo = ({ name, position, company, contact, email, location }) => {
         <li><strong>Contact:</strong> {contact}</li>
         <li><strong>Email:</strong> {email}</li>
         <li><strong>Location:</strong> {location}</li>
+        <li><strong>Profile:</strong> <a href={profileLink} target="_blank" rel="noopener noreferrer">Visit Profile</a></li>
       </ul>
-      <button>Поприветствовать</button>
+
+      {message && <p className="message">{message}</p>}
+
+      <button onClick={handleClick}>Поприветствовать</button>
     </div>
   );
 };
