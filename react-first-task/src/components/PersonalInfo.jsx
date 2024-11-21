@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
 const PersonInfo = ({ name, position, company, contact, email, location, profileLink }) => {
-  // Состояние для хранения текста сообщения
+
   const [message, setMessage] = useState('');
 
-  // Функция для обработки нажатия на кнопку
   const handleClick = () => {
-    setMessage(``);
+    setMessage(`Повысить в должности`);
   };
 
   return (
